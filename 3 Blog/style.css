@@ -1,0 +1,28 @@
+body {
+    border: 10px solid #bdc3c7;
+    max-width: 700px;
+    width: 80%;
+    margin: 10px auto;
+    font-family: 'Source Sans Pro';
+}
+h2 {
+    font-size: 2.0rem;
+    color: #2c3e50;
+}
+h4 {
+    color: #3498db;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.wrapper {
+    padding: 5px 15px;    
+}
+.first-p {
+    border-left: 5px solid gray;
+    padding-left: 5px;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
