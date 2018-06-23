@@ -13,33 +13,32 @@ numInput.addEventListener("change", function () {
 });
 
 p1.addEventListener("click", function () {
-    if (!gameOver) {
-        p1Points++;
-        if (p1Points == winningPoint.textContent) {
-            p1Score.classList.add("green");
-            gameOver = true;
-        }
-        p1Score.textContent = p1Points;
-    }
+    p1Points = addPoint(p1Points, p1Score);
 });
 
 p2.addEventListener("click", function () {
-    if (!gameOver) {
-        p2Points++;
-        if (p2Points == winningPoint.textContent) {
-            p2Score.classList.add("green");
-            gameOver = true;
-        }
-        p2Score.textContent = p2Points;
-    }
+    p2Points = addPoint(p2Points, p2Score);
 });
 
 reset.addEventListener("click", function () {
     p1Points = 0;
     p1Score.textContent = p1Points;
     p1Score.classList.remove("green");
+    
     p2Points = 0;
     p2Score.textContent = p2Points;
     p2Score.classList.remove("green");
     gameOver = false;
 });
+
+function addPoint(point, score) {
+    if (!gameOver) {
+        point++;
+        if (point == winningPoint.textContent) {
+            score.classList.add("green");
+            gameOver = true;
+        }
+        score.textContent = point;
+    }
+    return point;
+}
