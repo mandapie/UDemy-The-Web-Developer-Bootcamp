@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    background-color: #232323;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+.container {
+    max-width: 600px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#head {
+    background: lightBlue;
+    color: white;
+}
+#answer {
+    font-size: 40px;
+}
+.title {
+    font-size: 25px;
+}
+
+#menu {
+    background: white;
+    color: blue;
+}
+
+#content {
+}
+.square {
+    width: 30%;
+    background: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+}
