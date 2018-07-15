@@ -32,3 +32,11 @@
 * add description to campground model
 * show db.collection.drop()
 * add a show route/template
+
+## V3
+## Refactor Mongoose Code
+* create models directory
+* use module.exports
+* require everything correctly
+
+## 
