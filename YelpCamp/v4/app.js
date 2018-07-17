@@ -6,6 +6,7 @@ var Comment = require("./models/comment");
 var Campground = require("./models/campground");
 var seedDB = require("./seeds");
 
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 mongoose.connect("mongodb://localhost:27017/yelpCamp", { useNewUrlParser: true });

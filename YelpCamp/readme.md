@@ -49,6 +49,9 @@
 * add comment new and create routes
 * add new comment form
 
+## V4
 ## Style Show Page
 * add sidebar
 * display comments nicely
+
+## 
