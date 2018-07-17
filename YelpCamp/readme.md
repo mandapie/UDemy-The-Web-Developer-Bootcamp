@@ -38,5 +38,17 @@
 * create models directory
 * use module.exports
 * require everything correctly
+* add comment model
 
-## 
+## Drop and Create
+* create a seeds file to drop and create data
+* data includes campgrounds and comments
+* Display comments on page
+
+## Comment New/Create
+* add comment new and create routes
+* add new comment form
+
+## Style Show Page
+* add sidebar
+* display comments nicely
