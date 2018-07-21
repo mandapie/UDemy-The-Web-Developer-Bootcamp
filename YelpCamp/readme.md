@@ -1,4 +1,4 @@
-# Yelp Camp
+# Yelp Camp Workflow
 
 ## V1
 ## Basic Setup
@@ -75,3 +75,7 @@
 ## User: Comments
 * associate users and comments
 * save author's username to a comment automatically
+
+## User: Campgrounds
+* only registered users can create a campground
+* save username and id to campground

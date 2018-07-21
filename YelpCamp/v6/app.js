@@ -7,7 +7,7 @@ var localStrat = require("passport-local");
 
 /* require models */
 var User = require("./models/user");
-var seedDB = require("./seeds");
+// var seedDB = require("./seeds");
 
 /* require routes */
 var campgroundRoutes = require("./routes/campgrounds");
@@ -20,7 +20,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 mongoose.connect("mongodb://localhost:27017/yelpCamp", { useNewUrlParser: true });
-seedDB(); //drop and create database
+// seedDB(); //drop and create database
 
 /* passport configurations */
 app.use(require("express-session")({
