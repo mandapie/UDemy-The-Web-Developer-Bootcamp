@@ -54,4 +54,20 @@
 * add sidebar
 * display comments nicely
 
-## 
+## V5
+## Authentication
+* install passport packages
+* define user model
+* configure passport
+* add register routes and template
+* add login routes and template
+* add logout route
+* prevent user from commenting to campgrounds unless logged in
+* add links to navbar
+* show/hide auth links correctly
+
+## V6
+## Refactor code
+* authentication routes
+* comments routes
+* campgrounds routes
