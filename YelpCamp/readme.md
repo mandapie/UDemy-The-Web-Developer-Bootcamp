@@ -79,3 +79,17 @@
 ## User: Campgrounds
 * only registered users can create a campground
 * save username and id to campground
+
+## V7
+## Update and Destroy
+* add method override
+* add edit route for campgrounds
+* add link to edit page
+* add update route
+* add delete route
+
+## Authorization
+* only user who created a campground and edit/delete it
+* show edit/delete buttons only yo user who created the campground
+* same to comments
+* refactor middleware
