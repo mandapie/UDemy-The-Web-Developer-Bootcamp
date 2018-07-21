@@ -43,7 +43,7 @@ router.get("/logout", function(req, res) {
     res.redirect("/campgrounds");
 });
 
-/** check of user is logged in **/
+/** check iSf user is logged in **/
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();

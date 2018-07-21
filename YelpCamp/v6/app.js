@@ -1,15 +1,15 @@
-/* packages */
+/* require packages */
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var passport = require("passport");
 var localStrat = require("passport-local");
+
+/* require models */
 var User = require("./models/user");
-var Comment = require("./models/comment");
-var Campground = require("./models/campground");
 var seedDB = require("./seeds");
 
-/* routes */
+/* require routes */
 var campgroundRoutes = require("./routes/campgrounds");
 var commentRoutes = require("./routes/comments");
 var authRoutes = require("./routes/index");
@@ -34,12 +34,14 @@ passport.use(new localStrat(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+/* middleware */
 /** get req.user object **/
-app.use(function(req,res, next) {
+app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
     next();
 });
 
+/* use routes */
 app.use(authRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);

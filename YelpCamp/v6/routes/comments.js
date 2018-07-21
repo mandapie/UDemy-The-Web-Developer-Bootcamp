@@ -36,7 +36,7 @@ router.post("/", isLoggedIn, function(req, res) {
     });
 });
 
-/** check of user is logged in **/
+/** check if user is logged in **/
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();

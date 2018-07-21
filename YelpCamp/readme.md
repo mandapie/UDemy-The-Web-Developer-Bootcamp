@@ -71,3 +71,7 @@
 * authentication routes
 * comments routes
 * campgrounds routes
+
+## User: Comments
+* associate users and comments
+* save author's username to a comment automatically
