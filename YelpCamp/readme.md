@@ -93,3 +93,6 @@
 * show edit/delete buttons only yo user who created the campground
 * same to comments
 * refactor middleware
+
+## Final Touches
+* Improve UI

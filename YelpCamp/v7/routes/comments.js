@@ -1,10 +1,11 @@
 var express = require("express");
 var Campground = require("../models/campground");
 var Comment = require("../models/comment");
+var mw = require("../middleware");
 var router = express.Router({mergeParams: true}); //merges the campground id to comments.js
 
 /** add a comment form**/
-router.get("/new", isLoggedIn, function(req,res) {
+router.get("/new", mw.isLoggedIn, function(req,res) {
     Campground.findById(req.params.id, function(err, campgroundId) {
         if (err) {
             console.log(err);
@@ -16,7 +17,7 @@ router.get("/new", isLoggedIn, function(req,res) {
 });
 
 /** add a comment to a campground **/
-router.post("/", isLoggedIn, function(req, res) {
+router.post("/", mw.isLoggedIn, function(req, res) {
     Campground.findById(req.params.id, function(err, campgroundId) {
         if (err) {
             console.log(err);
@@ -40,7 +41,7 @@ router.post("/", isLoggedIn, function(req, res) {
 });
 
 /** edit comment form **/
-router.get("/:comment_id/edit", function(req, res) {
+router.get("/:comment_id/edit", mw.isCommenter, function(req, res) {
     Comment.findById(req.params.comment_id, function(err, commentId) {
         if (err) {
             res.redirect("back");
@@ -52,7 +53,7 @@ router.get("/:comment_id/edit", function(req, res) {
 });
 
 /** update a comment route **/
-router.put("/:comment_id", function(req, res) {
+router.put("/:comment_id", mw.isCommenter, function(req, res) {
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, commentId) {
         if (err) {
             console.log(err);
@@ -65,8 +66,8 @@ router.put("/:comment_id", function(req, res) {
 });
 
 /** delete a comment **/
-router.delete("/:comment_id", function(req, res) {
-    Comment.findByIdAndRemove(req.params.comment_id, req.body.comment, function(err) {
+router.delete("/:comment_id", mw.isCommenter, function(req, res) {
+    Comment.findByIdAndRemove(req.params.comment_id, function(err) {
         if (err) {
             console.log(err);
             res.redirect("back");
@@ -76,13 +77,5 @@ router.delete("/:comment_id", function(req, res) {
         }
     });
 });
-
-/** check if user is logged in **/
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/login");
-}
 
 module.exports = router;
