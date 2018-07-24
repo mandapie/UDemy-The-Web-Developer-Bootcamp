@@ -106,7 +106,7 @@
 
 ### UI Improvements
 * refactor login/sign up page
-* add home link navigation
+* make link active on page
 * refactor footer
 
 ### Campground Improvements
