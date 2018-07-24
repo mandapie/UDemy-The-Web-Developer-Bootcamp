@@ -59,18 +59,14 @@
 * install passport packages
 * define user model
 * configure passport
-* add register routes and template
-* add login routes and template
-* add logout route
+* add register, login, logout routes and template
 * prevent user from commenting to campgrounds unless logged in
 * add links to navbar
 * show/hide auth links correctly
 
 ## V6
 ### Refactor code
-* authentication routes
-* comments routes
-* campgrounds routes
+* separate authentication, comments, camgrounds routes into individual files
 
 ### User: Comments
 * associate users and comments
@@ -84,14 +80,13 @@
 ## Update and Destroy
 * add method override
 * add edit route for campgrounds
-* add link to edit page
-* add update route
-* add delete route
+* add link, to edit page
+* add update, delete route
 
 ### Authorization
 * only user who created a campground and edit/delete it
 * show edit/delete buttons only yo user who created the campground
-* same to comments
+* same with comments
 * refactor middleware
 
 ### Flash Messages
@@ -105,17 +100,23 @@
 * include modernizr for cross platform detection and support
 * add animation transition to background images
 
-### Dynamic Pricing
+### Add Dynamic Pricing
 * add price to campground model as a String datatype
-* add price to views/campgrounds/new.ejs
-* add price to views/campgrounds/edit.ejs (new and edit forms)
-* add price to views/camprounds/show.ejs (campground show page)
+* add price to views/campgrounds/new.ejs, new and edit forms, and campground show page
+
+### UI Improvements
+* refactor login/sign up page
+* add home link navigation
+* refactor footer
+
+### Campground Improvements
+* comments on show page
+* image upload
+* google maps
 
 ### Fuzzy Search
 
 ### Google Maps
-
-### Footer
 
 ### Home Link navigation
 
@@ -128,3 +129,5 @@
 ### Password reset
 
 ### Image Upload
+
+### Pagination on campground index

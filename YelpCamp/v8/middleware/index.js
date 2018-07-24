@@ -15,8 +15,14 @@ mw.isLoggedIn = function (req, res, next) {
 mw.isCampgroundOwner = function (req, res, next) {
     if(req.isAuthenticated()) {
         Campground.findById(req.params.id, function(err, campgroundId) {
-            if (err) {
-                req.flash("error", err.message);
+            if (err || !campgroundId) {
+                if(!campgroundId) {
+                    req.flash("error", "Campground not found");
+                }
+                else {
+                    req.flash("error", "Something went wrong");
+                }
+                console.log(err);
                 res.redirect("back");
             }
             else {
@@ -24,7 +30,7 @@ mw.isCampgroundOwner = function (req, res, next) {
                     next();
                 }
                 else {
-                    req.flash("error", err.message);
+                    req.flash("error", "You don't have permission");
                     res.redirect("back");
                 }
             }
@@ -41,7 +47,13 @@ mw.isCommenter = function (req, res, next) {
     if (req.isAuthenticated()) {
         Comment.findById(req.params.comment_id, function(err, commentId) {
             if (err) {
-                req.flash("error", err.message);
+                if(!commentId) {
+                    req.flash("error", "Comment not found");
+                }
+                else {
+                    req.flash("error", "Something went wrong");
+                }
+                console.log(err);
                 res.redirect("back");
             }
             else {
