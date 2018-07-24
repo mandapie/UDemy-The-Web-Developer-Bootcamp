@@ -26,6 +26,7 @@ router.post("/", mw.isLoggedIn, function (req, res) {
     Campground.create({
         name: req.body.name,
         image: req.body.image,
+        price: req.body.price,
         description: req.body.desc,
         author: {id: req.user._id, username: req.user.username}
     }, function(err, newCampground) {

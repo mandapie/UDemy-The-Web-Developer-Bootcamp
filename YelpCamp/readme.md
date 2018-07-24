@@ -1,61 +1,61 @@
 # Yelp Camp Workflow
 
 ## V1
-## Basic Setup
+### Basic Setup
 * add landing page
 * add campgrounds page that lists all campgrounds
 * each campground has a name and image
 
-## Layout and Basic Styling:
+### Layout and Basic Styling
 * create basic header and footer partials
 * add bootstrap
 
-## Create New Campgrounds:
+### Create New Campgrounds
 * setup new campground POST route
 * add body-parser
 * setup route to show form
 * add basic unstyled form
 
-## Style camgrounds page
+### Style camgrounds page
 * add a better header/title
 * make campgrounds display in a grid
 
 ## V2
-## Setup Database
+### Setup Database
 * install MongoDb
 * add Mongoose
 * setup campground model
 * use camground model inside of routes
 
-## Show Page
+### Show Page
 * review RESTful routes
 * add description to campground model
 * show db.collection.drop()
 * add a show route/template
 
 ## V3
-## Refactor Mongoose Code
+### Refactor Mongoose Code
 * create models directory
 * use module.exports
 * require everything correctly
 * add comment model
 
-## Drop and Create
+### Drop and Create
 * create a seeds file to drop and create data
 * data includes campgrounds and comments
 * Display comments on page
 
-## Comment New/Create
+### Comment New/Create
 * add comment new and create routes
 * add new comment form
 
 ## V4
-## Style Show Page
+### Style Show Page
 * add sidebar
 * display comments nicely
 
 ## V5
-## Authentication
+### Authentication
 * install passport packages
 * define user model
 * configure passport
@@ -67,16 +67,16 @@
 * show/hide auth links correctly
 
 ## V6
-## Refactor code
+### Refactor code
 * authentication routes
 * comments routes
 * campgrounds routes
 
-## User: Comments
+### User: Comments
 * associate users and comments
 * save author's username to a comment automatically
 
-## User: Campgrounds
+### User: Campgrounds
 * only registered users can create a campground
 * save username and id to campground
 
@@ -88,11 +88,43 @@
 * add update route
 * add delete route
 
-## Authorization
+### Authorization
 * only user who created a campground and edit/delete it
 * show edit/delete buttons only yo user who created the campground
 * same to comments
 * refactor middleware
 
-## Final Touches
-* Improve UI
+### Flash Messages
+* install and configure connect-flash
+* add bootstrap alerts to header
+
+## V8
+### Slider images on Landing Page
+* refactor landing page
+* Add landing.css
+* include modernizr for cross platform detection and support
+* add animation transition to background images
+
+### Dynamic Pricing
+* add price to campground model as a String datatype
+* add price to views/campgrounds/new.ejs
+* add price to views/campgrounds/edit.ejs (new and edit forms)
+* add price to views/camprounds/show.ejs (campground show page)
+
+### Fuzzy Search
+
+### Google Maps
+
+### Footer
+
+### Home Link navigation
+
+### Authentication flash messages?
+
+### User Profile
+
+### Display time since posted
+
+### Password reset
+
+### Image Upload
