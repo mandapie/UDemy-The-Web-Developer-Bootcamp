@@ -14,6 +14,9 @@
                 <input class="form-control" type="text" name="campground[price]" placeholder="price/night"  value="<%= campground.price %>">
             </div>
             <div class="form-group">
+                <input id="location" class="form-control" type="text" name="campground[location]" placeholder="location"  value="<%= campground.location %>">
+            </div>
+            <div class="form-group">
                 <textarea class="form-control" type="text" name="campground[description]" placeholder="description"><%= campground.description %></textarea>
             </div>
             <button class="btn btn-primary btn-block" type="submit">Edit</button>

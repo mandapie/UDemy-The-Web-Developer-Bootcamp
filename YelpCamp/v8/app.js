@@ -1,4 +1,6 @@
 /* require packages */
+require('dotenv').config();
+
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
@@ -6,7 +8,6 @@ var passport = require("passport");
 var localStrat = require("passport-local");
 var methodOverride = require("method-override");
 var flash = require("connect-flash");
-
 /* require models */
 var User = require("./models/user");
 // var seedDB = require("./seeds");

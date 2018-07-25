@@ -1,7 +1,14 @@
 var express = require("express");
 var Campground = require("../models/campground");
 var mw = require("../middleware");
+var nodeGeocoder = require("node-geocoder");
 var router = express.Router();
+var options = {
+    provider: 'google',
+    httpAdapterL: 'https',
+    apikey: process.env.GEOCODER_API_KEY,
+    formatterL null
+}
 
 /** show all campgrounds **/
 router.get("/", function (req, res) {
@@ -29,6 +36,7 @@ router.post("/", mw.isLoggedIn, function (req, res) {
         image: req.body.image,
         price: req.body.price,
         description: req.body.desc,
+        location: req.body.location,
         author: {id: req.user._id, username: req.user.username}
     }, function(err, newCampground) {
         if(err) {

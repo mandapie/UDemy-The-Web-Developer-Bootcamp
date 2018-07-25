@@ -110,13 +110,18 @@
 * refactor footer
 
 ### Campground Improvements
-* comments on show page
-* image upload
-* google maps
+* make new comments on show page
+* allow image upload
+* add google maps
 
 ### Fuzzy Search
 
 ### Google Maps
+* sign up to get api key
+* enable geocode
+* install dotenv
+* install node-geocoder
+* update camground model, routes, and forms
 
 ### Home Link navigation
 
