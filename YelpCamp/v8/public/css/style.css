@@ -23,6 +23,7 @@
     margin: 25px auto;
 }
 #map{
+    margin-top: 20px;
     height: 400px;
     width: 100%;
 }
