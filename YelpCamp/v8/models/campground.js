@@ -8,6 +8,7 @@ var campgroundSchema = new mongoose.Schema({
     location: String,
     long: Number,
     lat: Number,
+    created: { type: Date, default: Date.now },
     author: {
         id: {type: mongoose.Schema.Types.ObjectId, ref: "user"},
         username: String

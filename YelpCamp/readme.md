@@ -109,19 +109,21 @@
 * make link active on page
 * refactor footer
 
-### Campground Improvements
-* make new comments on show page
-* allow image upload
-* add google maps
-
-### Google Maps
+### Add Google Maps on Show Page
 * sign up to get api key
 * enable geocode
 * install dotenv
 * install node-geocoder
 * update camground model, routes, and forms
 
+### Display time since posted
+* install moment.js
+* update campground and comment models
+* include in show page
+
 ### Image Upload
+
+### make new comments on show page
 
 ### Fuzzy Search
 
@@ -130,8 +132,6 @@
 ### Authentication flash messages?
 
 ### User Profile
-
-### Display time since posted
 
 ### Password reset
 
