@@ -123,6 +123,8 @@
 
 ### Image Upload
 
+### User Profile
+
 ### make new comments on show page
 
 ### Fuzzy Search
@@ -131,7 +133,7 @@
 
 ### Authentication flash messages?
 
-### User Profile
+
 
 ### Password reset
 

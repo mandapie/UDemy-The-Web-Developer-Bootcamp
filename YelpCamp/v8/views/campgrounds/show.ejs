@@ -18,7 +18,7 @@
                     <h4 class="card-title float-right">$<%= campground.price %>/night</h4>
                     <h4 class="card-title"><a href="#"><%= campground.name %></a></h4>
                     <p class="card-text"><%- campground.description %></p>
-                    <p><em>Submitted by <%= campground.author.username %>, <%= moment(campground.created).fromNow() %></em></p>
+                    <p><em>Submitted by <a href="/users/<%= campground.author.id %>"><%= campground.author.username %></a>, <%= moment(campground.created).fromNow() %></em></p>
                     
                     <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
                         <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>

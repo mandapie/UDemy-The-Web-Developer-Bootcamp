@@ -15,6 +15,7 @@ var User = require("./models/user");
 /* require routes */
 var campgroundRoutes = require("./routes/campgrounds");
 var commentRoutes = require("./routes/comments");
+var userRoutes = require("./routes/users");
 var authRoutes = require("./routes/index");
 
 /* express setups */
@@ -51,6 +52,7 @@ app.use(function(req, res, next) {
 
 /* use routes */
 app.use(authRoutes);
+app.use("/users", userRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
