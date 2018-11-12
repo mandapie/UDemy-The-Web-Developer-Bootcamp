@@ -1,0 +1,59 @@
+/* require packages */
+require('dotenv').config();
+
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var passport = require("passport");
+var localStrat = require("passport-local");
+var methodOverride = require("method-override");
+var flash = require("connect-flash");
+/* require models */
+var User = require("./models/user");
+// var seedDB = require("./seeds");
+
+/* require routes */
+var campgroundRoutes = require("./routes/campgrounds");
+var commentRoutes = require("./routes/comments");
+var userRoutes = require("./routes/users");
+var authRoutes = require("./routes/index");
+
+/* express setups */
+var app = express();
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
+app.use(flash());
+mongoose.connect("mongodb://localhost:27017/yelpCamp", { useNewUrlParser: true });
+// seedDB(); //drop and create database
+
+/* passport configurations */
+app.use(require("express-session")({
+    secret: "Just A Secret",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrat(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+/* middleware */
+/** get req.user object **/
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    res.locals.moment = require("moment");
+    next();
+});
+
+/* use routes */
+app.use(authRoutes);
+app.use("/users", userRoutes);
+app.use("/campgrounds", campgroundRoutes);
+app.use("/campgrounds/:id/comments", commentRoutes);
+
+app.listen(process.env.PORT, process.env.IP);

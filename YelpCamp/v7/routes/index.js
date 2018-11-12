@@ -5,7 +5,7 @@ var router = express.Router();
 
 /** home page **/
 router.get("/", function (req, res) {
-    res.render("campgrounds/landing");
+    res.render("landing");
 });
 
 /** register form **/
@@ -17,8 +17,7 @@ router.get("/register", function(req, res) {
 router.post("/register", function(req, res) {
     User.register(new User({username: req.body.username}), req.body.password, function(err, newUser) {
         if (err) {
-            console.log(err);
-            return res.render("register");
+            return res.render("register", {"error": err.message});
         }
         passport.authenticate("local")(req, res, function() {
             res.redirect("/campgrounds");
@@ -40,6 +39,7 @@ router.post("/login", passport.authenticate("local", {
 /** logout route **/
 router.get("/logout", function(req, res) {
     req.logout();
+    req.flash("success", "You logged out");
     res.redirect("/campgrounds");
 });
 
